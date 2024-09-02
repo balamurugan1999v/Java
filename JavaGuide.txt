@@ -1,0 +1,92 @@
+Java My refresher Document
+
+----
+
+Wrapper class:
+It is used to convert the data from primitive data type to Objects.
+For example:
+Int i = 10; --> Primitive datatype
+Interger intValue = new Integer(i); --> Wrapper class.
+
+----
+
+JDK :
+	Java Development Kit -->  
+		Providing all the dependacies to develop the program.(Dev tools)
+		It is used to compile the code in the development phase.
+		It is used to convert the java file into class file.
+		It contains JRE and JVM
+		JRE + Development tools = JDK
+
+
+JRE :
+	Java Runtime Environment --> It is allow the class file to execute on the environment. It doesn't allow to compile the code. It will contains executable libraries in it.
+	JVM is a one of the part of JRE.	
+	JVM + Libraries = JRE
+	
+	
+JVM : 
+	Java Virtual Machine --> 
+		Here only the executed class file will run.
+		It is executing the program line by line.
+		It is the key part for both JVM and JDK.
+			
+
+----
+
+Access Modifiers:
+	Default - If we not mentioned anything then it will be default access modifier. It can be accessible only inside the package.
+	
+	Private - Only accessible in the class
+	
+	Protected - Only accessible with in the package and child class of the other package.
+	
+	Public - Accessible any where in the code.
+	
+----
+
+Class :
+	It represent the structure. Contains the variables and methods.
+	
+	public class classname
+	e.g  -->
+	public class Student{
+	}
+
+Objects : 
+	If class is lock then objects is keys. By using the objects only we can access the variables and methods inside the class.
+	
+	Classname objectName = new Classname();
+	
+	Student student = new Student();
+----
+
+OOPS:
+	1. Abstraction
+	2. Encapsulation
+	3. Inheritance
+	4. Polymorphism
+	
+Abstraction:
+	We can able to see only the output of the functionality. It will hide all the processes.	
+	
+Encapsulation:
+	* We are not able to access the private class variables outside of the class but by using this we can able to access the private method values outside of the class.
+	* Example -> Getter and setters
+	
+	
+Polymorphism:
+
+	* Method overloading and overriding is the example of Polymorphism
+	
+	
+	
+Inheritance:
+	It is accessing the parent classes from the child classes.
+	
+	* Public class A extends B --> here A is child and B is parent.
+	* Each member for B can able to access by A's object but B's object not able to access the A. CHild can access parent class but parent class not able to access the child class.
+	* If access modifier protected in Parent then Private is not possible in the child for same method name(During the override)
+
+	
+	
