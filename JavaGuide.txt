@@ -68,11 +68,74 @@ OOPS:
 	4. Polymorphism
 	
 Abstraction:
-	We can able to see only the output of the functionality. It will hide all the processes.	
+	* We can able to see only the output of the functionality. It will hide all the processes.
+	* It can be acheived by abstract keyword and interfaces
+	* Example with Abstract keyword, here abstract have only defined the methods names actual implementations in the another place but by seeing this abstract method we can able to understand the objective of the code.
+	abstract class A{
+		abstract void print(); // abstract method, here we can create concerete methods as well
+	}
+	
+	class B extends A{
+		void print(){
+			System.out.println("Printing");
+		}
+		
+		public static void main(String args[]){
+			A obj = new B();
+			obj.print();
+		}
+	}
+	
+	If we use interfaces
+	
+	Interface shape{
+		double calculateArea();
+	}
+	
+	Class circle implements shape{
+		public circle(double radius){
+			this.radius = radius;
+		}
+		
+		public double calculateArea(){
+			return (radius * radius * (22/7));
+		}
+	}
+	
+	Class square implements shape{
+		public square(double length){
+			this.length = length;
+		}
+		
+		public double calculateArea(){
+			return (4 * length);
+		}
+	}
+	
+	
 	
 Encapsulation:
 	* We are not able to access the private class variables outside of the class but by using this we can able to access the private method values outside of the class.
 	* Example -> Getter and setters
+	* Hiding the implementation details to outside classes.
+	
+	Example:
+	
+	class Example{
+		private name ;
+		
+		public String getName(){
+			return this.name;
+		}
+		
+		public void setName(String name){
+			this.name = name;
+		}
+	}
+	
+	Here name is private directly other class not able to access it but by using this getter and setter other classes can read the data, update the data.
+	
+	
 	
 	
 Polymorphism:
@@ -86,7 +149,19 @@ Inheritance:
 	
 	* Public class A extends B --> here A is child and B is parent.
 	* Each member for B can able to access by A's object but B's object not able to access the A. CHild can access parent class but parent class not able to access the child class.
-	* If access modifier protected in Parent then Private is not possible in the child for same method name(During the override)
+	* If access modifier protected in Parent then Private is not possible in the child for same method name(During the override).
+	
+---
+Diamond Program:
 
 	
-	
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
