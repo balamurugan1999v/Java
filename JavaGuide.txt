@@ -152,9 +152,10 @@ Inheritance:
 	* If access modifier protected in Parent then Private is not possible in the child for same method name(During the override).
 	
 ---
+Play area 1:
 Diamond Program:
 
-	
+https://github.com/balamurugan1999v/Java/blob/main/PractiseJava/src/Pattern/Diamond.java	
 
     * 
    * * 
@@ -165,3 +166,35 @@ Diamond Program:
   * * * 
    * * 
     * 
+
+
+---
+
+Constructors:
+
+	There are three types of Constructors those are default constructor, parameterized constructor and copy constructor.
+	
+	class A{
+		public A(){
+		}
+	}
+	
+	class AB{
+		public AB(String name){
+		}
+	}
+	
+	class copyConstructor{
+		public copyConstructor(String name){
+			this.name = name;
+		}
+		
+		public copyConstructor(copyConstructor object){
+			this.name = object.name;
+		}
+	}
+	
+	copyConstructor a = new copyConstructor("Learning");
+	copyConstructor b = new copyConstructor(a);
+	
+---
