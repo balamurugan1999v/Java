@@ -169,6 +169,9 @@ https://github.com/balamurugan1999v/Java/blob/main/PractiseJava/src/Pattern/Diam
    * * 
     * 
 
+Play area 2:
+
+https://github.com/balamurugan1999v/Java/blob/main/PractiseJava/src/Basic/CharacterCount.java
 
 ---
 
@@ -256,7 +259,7 @@ Stream API:
 			Key methods:
 				1. collect() --> It is used to collect the result into any of the structure like list,set.
 				2. foreach() --> It is used to iterate all the elements present in the stream.
-					
+					https://github.com/balamurugan1999v/Java/blob/main/PractiseJava/src/Java8/ForEach.java
 				3. reduce() --> Convert stream into single value
 				4. allMatch() --> By passing a condition it will check all the value present inside the stream matching or not if it is matching then output will be true else false.
 				5. anyMatch() --> It will be opposite of allMatch(). If will return true any of the value in the stream match for the given condition.
@@ -300,4 +303,59 @@ Stream API:
 				);
 
 
+Optional:
+	It is created to avoid the null pointer exception crashing the application issue.
+	
+	Example code:
+	
+	1. 
+	public static void main(String[] args)
+    {
+        String[] words = new String[10];
+        words[7] = "Bmg";
+        
+        System.out.println(words[5].toLowerCase());
+        
+    }
+	Output: Nullpointer Exception
+	
+	2.
+	public static void main(String[] args)
+    {
+        String[] words = new String[10];
+        words[5] = "Bmg";
+        
+        System.out.println(words[5].toLowerCase());
+        
+    }
+	Output: bmg
+	
+	3.
+	public static void main(String[] args)
+    {
+        String[] words = new String[10];
+        words[5] = "Bmg";
+        
+		Optional<String> checkNull = Optional.ofNullable(words[5]);
+		if(checkNull.isPresent())
+		System.out.print(checkNull.get());
+        
+    }
+	Output: Bmg
+	
+	4.
+	public static void main(String[] args)
+    {
+        String[] words = new String[10];
+        words[5] = "Bmg";
+        
+		Optional<String> checkNull = Optional.ofNullable(words[7]);
+		//if(checkNull.isPresent())
+		System.out.print(checkNull.get());
+        
+    }
+	Output: NoSuchElementException
+	
+	Syntax for stream:
+	Optional<String> count1 = Optional.ofNullable(list.stream().filter().findAny().orElse(""));
 ------------

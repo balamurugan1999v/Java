@@ -2,6 +2,7 @@ package Java8;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Stream {
@@ -17,6 +18,8 @@ public class Stream {
 		}
 		long count = strList.stream().filter(s -> s.equalsIgnoreCase("you")).count();
 		System.out.println(count);
+		Optional<String> count1 = Optional.ofNullable(strList.stream().findAny().orElse(""));
+		System.out.println(count1);
 	}
 	
 
