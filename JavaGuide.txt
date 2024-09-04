@@ -135,7 +135,9 @@ Encapsulation:
 	
 	Here name is private directly other class not able to access it but by using this getter and setter other classes can read the data, update the data.
 	
-	
+	Advantage:
+		1. we have access control over data. It is allow us to make class or object as read-write and read only access. If we not allowed/write setter then it will be read only obj data will be set during the object creation only.
+		2. Reusability we can use the same getter any where of the place if we need that data.
 	
 	
 Polymorphism:
@@ -198,3 +200,104 @@ Constructors:
 	copyConstructor b = new copyConstructor(a);
 	
 ---
+
+JAVA 8 Features:
+	One of the feature is called stream.
+	
+Stream API:
+		It is not a data structure, it will take a data from collections or Arrays and return as stream.
+		It wont change the source collections/Arrays data only produce the result as per the logic written
+		It is contains two type of operations 
+			1. Intermediate operations
+			2. Terminate operations
+			
+			Example:
+			 Input --> Process1 --> process2 --> process3 --> Last process --> Output
+			 
+			Here process1,2,3 are intermediate process and last process is terminate process
+		1. Intermediate operations:
+			Methods are chained together.
+			Intermediate operations transform a stream into another stream.
+			It enables the concept of filtering where one method filters data and passes it to another method after processing.
+			
+			Some of the keywords for Intermediate operations
+			1. map() -> It is used to perform of the operation given in the bracket
+			2. filter() --> It will act as a conditional operation
+			3. sorted() -> It will sort the data based on our input
+			4. flatMap() --> It will perform in the collection of collection
+			5. peek() --> If we want to perform any add action to any other collection we can use this
+			6. distinct() --> It is used to remove the duplicates.
+			
+			Example program:
+				 List<List<String>> listOfLists = Arrays.asList(
+						Arrays.asList("Reflection", "Collection", "Stream"),
+						Arrays.asList("Structure", "State", "Flow"),
+						Arrays.asList("Sorting", "Mapping", "Reduction", "Stream")
+					);
+
+				
+				Set<String> intermediateResults = new HashSet<>();
+
+				
+				List<String> result = listOfLists.stream()
+					.flatMap(List::stream)               // Flatten the list of lists into a single stream
+					.filter(s -> s.startsWith("S"))      // Filter elements starting with "S"
+					.map(String::toUpperCase)            // Transform each element to uppercase
+					.distinct()                          // Remove duplicate elements
+					.sorted()                            // Sort elements
+					.peek(s -> intermediateResults.add(s)) // Perform an action (add to set) on each element
+					.collect(Collectors.toList());       // Collect the final result into a list
+				
+				System.out.println(result);
+
+		2. Terminate operations:
+			It is used to return the result. Basically last operation by using this we can get only output.
+			
+			Key methods:
+				1. collect() --> It is used to collect the result into any of the structure like list,set.
+				2. foreach() --> It is used to iterate all the elements present in the stream.
+					
+				3. reduce() --> Convert stream into single value
+				4. allMatch() --> By passing a condition it will check all the value present inside the stream matching or not if it is matching then output will be true else false.
+				5. anyMatch() --> It will be opposite of allMatch(). If will return true any of the value in the stream match for the given condition.
+				6. findFirst() --> It will collect the very first value of the given condition.
+				7. count() --> It will return the size of the stream.
+				
+			Example:
+				
+				List<String> names = Arrays.asList(
+					"Reflection", "Collection", "Stream",
+					"Structure", "Sorting", "State"
+				);
+				//foreach
+				names.stream().forEach(System.out::println);
+
+				// collect: Collect names starting with 'S' into a list
+				List<String> sNames = names.stream()
+										   .filter(name -> name.startsWith("S"))
+										   .collect(Collectors.toList());
+
+				// reduce: Concatenate all names into a single string
+				String concatenatedNames = names.stream().reduce(
+					"",
+					(partialString, element) -> partialString + " " + element
+				);
+				
+				// count: Count the number of names
+				long count = names.stream().count();
+				
+				// findFirst: Find the first name
+				Optional<String> firstName = names.stream().findFirst();
+
+				// allMatch: Check if all names start with 'S'
+				boolean allStartWithS = names.stream().allMatch(
+					name -> name.startsWith("S")
+				);
+				
+				// anyMatch: Check if any name starts with 'S'
+				boolean anyStartWithS = names.stream().anyMatch(
+					name -> name.startsWith("S")
+				);
+
+
+------------
