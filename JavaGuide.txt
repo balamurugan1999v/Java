@@ -142,6 +142,8 @@ Encapsulation:
 	
 Polymorphism:
 
+	* It is a single action perform in a different ways.
+	* It is having two types compile time and run time polymorphism
 	* Method overloading and overriding is the example of Polymorphism
 	
 	
@@ -358,4 +360,156 @@ Optional:
 	
 	Syntax for stream:
 	Optional<String> count1 = Optional.ofNullable(list.stream().filter().findAny().orElse(""));
+	
+	
+Functional Interface:
+	Functional interface is one of the main feature in Java8.
+	It is also a interface but it will only contains one abstract method.
+	In order to implement the abstract method we can use lampda expression.
+	If we add more than one method into functional Interface then it will show an error in the compile time
+	
+	Example:
+	
+	@FunctionalInterface
+	interface A{
+		public add(int a,int b);
+	}
+	//Before Lambda
+	class B {
+		public static void main(String args[]){
+			A obj = new A() {
+				public void add(int a, int b){
+					return a+b;
+				}
+			};
+			System.out.println(obj.add(5,6));
+		}
+	}
+	
+	Output : 11
+	
+	If it is normal interface then It will be like
+	//@FunctionalInterface
+	interface A{
+		public int add(int a,int b);
+		public void show(int result);
+	}
+	//Before Lambda
+	class B {
+		public static void main(String args[]){
+			A obj = new A() {
+				public int add(int a, int b){
+					return a+b;
+				}
+				public void show(int r) {
+					System.out.println(r);
+				}
+			};
+			//System.out.println(obj.add(5,6));
+			obj.show(obj.add(5, 6));
+		}
+	}
+	
+	Output : 11
+	
+	Built in FunctionalInterfaces:
+		* Runnable --> It contains only run() method
+ 		* Callable --> It contains only call() method
+		* Comparable --> It contains only compareTo() method.
+		* ActionListener --> It contains only actionPerformed() method.
+		
+	Java8 is having 4 main kinds of FI
+		1. Consumer --> 
+			It will have one parameter and no return type.
+			It is also having intConsumer, doubleConsumer, longConsumer and BI-Consumer --> it will take two params instead of one.
+		2. Predicate -->
+			It is having one param or argument as input and boolean as return type
+			It is also having intPredicate, doublePredicate, longPredicate and BI-Predicate --> It will take two params	
+			test() is the method name for predicate.
+			Example:
+				Predicate<String> p = (s) -> s.startsWith("G")
+				p.test("Gobi");
+		3. Function -->
+			It is having one params as input and same data type will be return. Both the values should be identical
+			BI-Function should have two param as input and one is output.
+			It is also having booleanFunction, int, double and longFunction
+			apply() method name
+		4. Supplier --> 
+			It will not have any params as input but return a value
+			get() is a method.
+			It is also having int, double, boolean, longSupplier
+	
+	
+Lambda Expression:
+
+	Lambda expression is used to implement the method which is declared in the functional interface.
+	It should contains the aero mark (->).
+	We no need to mention the datatypes in the paranthesis, since it is already represented in the function interface.
+	We can reduce the line as much as possible and it will only for Functional Interface.
+	
+	Example:
+	
+	@FunctionalInterface
+	interface A{
+		public int add(int a,int b);
+		//public void show(int result);
+	}
+	//After Lambda
+	class B {
+		public static void main(String args[]){
+			A obj = (a, b) -> a+b;			
+			System.out.println(obj.add(5,6));
+		}
+	}
+	
+	The above and this both are similar examples but here we no need to mention the method name and parameteres datatype and return keyword(if only one statement and that also return)
+	
+JAVA DATE TIME API:
+	LocalDate, LocalTime, LocalDateTime these classes used to find the date, time in Java8.
+	Format also possible in this flow
+	
+	Example:
+		LocalDate ld = LocalDate.now();
+		System.out.println(ld);
+		
+		LocalTime lt = LocalTime.now();
+		System.out.println(lt);
+		
+		LocalDateTime ldt = LocalDateTime.now();
+		System.out.println(ldt);
+		
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-YYYY:HH-mm-ss");
+		System.out.println(ldt.format(format));
+		
+		System.out.println(ldt.getMonth());
+		System.out.println(ldt.getYear());
+		System.out.println(ldt.getDayOfWeek());
+		System.out.println(ldt.getDayOfMonth());
+		System.out.println(ldt.getDayOfYear());
+		
+		
+	Output:
+		2024-09-06
+		00:56:55.188772
+		2024-09-06T00:56:55.190774700
+		06-09-2024:00-56-55
+		SEPTEMBER
+		2024
+		FRIDAY
+		6
+		250
+
 ------------
+
+CompareTo():
+	It is used to compare two string or objects and it will return int as a result
+	Syntax:
+		int returnValue = string1.compareTo(String2);
+	if string1 > string2 - positive number
+	if string1 < string2 - Negative number
+	if string1 = string2 - Zero
+	
+	Example:
+		"bmg".compareTo("Bmg"); --> return negative
+		"bmg".compareToEqualsIgnoreCase("Bmg"); --> Zero
+		
