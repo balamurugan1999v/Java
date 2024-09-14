@@ -513,3 +513,42 @@ CompareTo():
 		"bmg".compareTo("Bmg"); --> return negative
 		"bmg".compareToEqualsIgnoreCase("Bmg"); --> Zero
 		
+Desing patterns:
+	
+	Design pattern is used to provide a solution for recurring problems.
+	The solution will be review by all the organisation and it is added as Design pattern.
+	
+	How to create a design pattern:
+		One user can identify a new recurring issue and apply it in design pattern catalogue this is called as candidate pattern. If the same problem is occuring to other organisation then this solution will be reviewed and approved as design pattern.
+
+	Design pattern Types:
+		Two types
+		1. GOF Design patterns
+		2. JEE Design patterns
+		
+		GOF Design patterns:
+			This is group of Four design patterns created by four members.
+			It is having 3 categories
+			1. Creational pattern - While creating an object
+				Examples: Singleton, Factory
+				
+				Singleton: It is used to create only one object of the class. If developer wants to create one more instance then the previous instance will be assigned to new instance also.
+					Examples: 
+					1. If we want to use loggers no need to create different object one object we can use it anywhere. 
+					2. DB Connection, One object is enough to obtain the db connection by passing the same object we can perform all the required crud operations.
+				
+			2. Structural pattern - It is defining the stucture of an object/class
+				Examples: Fly-weight
+			3. Behavioural pattern - It is defining the performance of the object.
+				Examples:
+				
+		2. JEE Design patterns:
+			It is related to Java Enterprise application creation design pattern. It is like MVC pattern.
+			Which contains 4 layers.
+			1. Presentation layer - Communicating to client.
+			2. Service Layer - Where all the business logics will be written.
+			3. DatabaseLayer - Where all CRUD operations will be performed
+			4. Interface Layer - It is used to communicate to other interfacing systems.
+			
+			Each layer has individual design patterns.
+			
