@@ -512,6 +512,28 @@ CompareTo():
 	Example:
 		"bmg".compareTo("Bmg"); --> return negative
 		"bmg".compareToEqualsIgnoreCase("Bmg"); --> Zero
+
+Serializable : 
+	It is converting the object into series of bits, to write into file/network.
+	The class should implement Serializable from java.io;
+		public static class SingletonExample implements Serializable{
+			//Code Block
+		}
+	We can perform write to file by using FOS(FileOutputStream) and OOS(ObjectOutputStream)
+	
+DeSerializable:
+	From the created file by reading the data we can create an Object.
+	It can be acheieved by FIS and OIS. (FileInputStream and ObjectInputStream)
+	
+	Examples:
+		SingletonExample obj = SingletonExample.getInstance();
+		SingletonExample obj1 ;
+		FileOutputStream fos = new FileOutputStream(new File("C:\\Users\\ELCOT\\Desktop\\FullStack\\Java\\PractiseJava\\src\\DesignPattern\\Singleton\\file.ser"));
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(obj);
+		FileInputStream fis = new FileInputStream("C:\\Users\\ELCOT\\Desktop\\FullStack\\Java\\PractiseJava\\src\\DesignPattern\\Singleton\\file.ser");
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		obj1 = (SingletonExample) ois.readObject();
 		
 Desing patterns:
 	
@@ -539,7 +561,7 @@ Desing patterns:
 				If we are going to create an Object from Deserialization then object will be created newly. In order to avoid that we can use one method is readResolve() in the singletonClass.
 					public Object readResolve() { // It is used to create a same object when we are using deserialization
 						return classobject;
-					}	
+					}
 				
 			2. Structural pattern - It is defining the stucture of an object/class
 				Examples: Fly-weight
