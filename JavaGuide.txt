@@ -536,6 +536,10 @@ Desing patterns:
 					Examples: 
 					1. If we want to use loggers no need to create different object one object we can use it anywhere. 
 					2. DB Connection, One object is enough to obtain the db connection by passing the same object we can perform all the required crud operations.
+				If we are going to create an Object from Deserialization then object will be created newly. In order to avoid that we can use one method is readResolve() in the singletonClass.
+					public Object readResolve() { // It is used to create a same object when we are using deserialization
+						return classobject;
+					}	
 				
 			2. Structural pattern - It is defining the stucture of an object/class
 				Examples: Fly-weight
