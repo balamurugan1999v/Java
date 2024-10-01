@@ -59,6 +59,25 @@ Objects :
 	Classname objectName = new Classname();
 	
 	Student student = new Student();
+	
+---
+
+String:
+	String is used to store the words, sentences, collection of charecters.
+	It is having three different methods
+		1. String Literal
+			String a = "";
+			It is immutable, meaning if we want to change the value of the string another one address will be created in the stringpool and the variable will point to the new location. The old one wont be delete or update.
+			It doesn't have any reverse keyword to perform the reverseString action.
+		2. StringBuilder
+			StringBuilder obj = new StringBuilder("");
+			It is mutable, if we are making any change in the obj then it wont create any new location in the stringpool. Existing one will be updated.
+			It is not thread-safe.
+			It is contains  reverse() in built method to reverse the string.
+		3. StringBuffer
+			StringBuffer obj = new StringBuffer();
+			It is thread-safe and contains reverse() in built keyword to reverse the string.
+			It is mutable like stringbuilder.
 ----
 
 OOPS:
@@ -72,7 +91,7 @@ Abstraction:
 	* It can be acheived by abstract keyword and interfaces
 	* Example with Abstract keyword, here abstract have only defined the methods names actual implementations in the another place but by seeing this abstract method we can able to understand the objective of the code.
 	abstract class A{
-		abstract void print(); // abstract method, here we can create concerete methods as well
+		abstract void print(); // abstract method, here we can create concernete methods as well
 	}
 	
 	class B extends A{
