@@ -74,6 +74,7 @@ String:
 			It is mutable, if we are making any change in the obj then it wont create any new location in the stringpool. Existing one will be updated.
 			It is not thread-safe.
 			It is contains  reverse() in built method to reverse the string.
+			If we want to edit the string then need to replace(start,end, String)
 		3. StringBuffer
 			StringBuffer obj = new StringBuffer();
 			It is thread-safe and contains reverse() in built keyword to reverse the string.
@@ -597,3 +598,13 @@ Desing patterns:
 			
 			Each layer has individual design patterns.
 			
+Searching:
+	Most popular searching algorithm
+		1. Binary search- it is following divide and conquer method based search.
+		2. Linear search - It is used to search one by one.
+		
+Sorting:
+	Most popular sorting algorithms are
+		1. Merge sort
+		2. Bubble sort
+		3. Quick sort
