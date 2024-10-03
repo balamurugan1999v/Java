@@ -323,6 +323,7 @@ Stream API:
 				boolean anyStartWithS = names.stream().anyMatch(
 					name -> name.startsWith("S")
 				);
+	Parallelstream - It is used to run the operation parallel in multiple threads and CPU core. COmepare to stream it is fast in terms of time taken.
 
 
 Optional:
