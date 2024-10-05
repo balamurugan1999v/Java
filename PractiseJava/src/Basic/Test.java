@@ -2,6 +2,8 @@ package Basic;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -32,6 +34,14 @@ public class Test {
 			
 			System.out.println(finalStr);
 	
+			
+	//4-10-2024 to check the treemap functionalities
+	Set<String> set = new TreeSet<String>(list);
+	System.out.println(set);
+	//Output: 
+	//List--> [what, where, what, you, doing]
+	//set --> [doing, what, where, you]
 	}
+	
 
 }

@@ -598,6 +598,48 @@ Desing patterns:
 			4. Interface Layer - It is used to communicate to other interfacing systems.
 			
 			Each layer has individual design patterns.
+
+Comparator:
+	It is a functional interface contains compare(T,T) method in it.
+	It will be used to sort the collections.
+	
+	class Student{
+		private int age;
+		private String name;
+		
+		Student(int age, String name){
+			this.age = age;
+			this.name = name;
+		}
+		//getter and setters
+	}
+	public static void main(String args[]){
+		List<Student> students = new ArrayList<Student>();
+		students.add(new Student(51,"Bmg"));
+		students.add(new Student(25,"Bala"));
+		students.add( new Student(63,"Priya"));
+		students.add(new Student(40,"Adam"));
+		
+		//Collections.sort(students); // If we are doing this it wont sort. If we want sort by age then need to specify it by using Comparator.
+		
+		Comparator com = new Comparator<Student>() {
+			public int compare(Student s1, Student s2){
+				if(s1.age > s2.age)
+					return 1;
+				else
+					return -1;
+			}
+		};
+		students.stream().forEach(s -> System.out.println(s.getAge() + " " + s.getName()));
+		Collections.sort(students, com);
+		System.out.println("After");
+		students.stream().forEach(s -> System.out.println(s.getAge() + " " + s.getName()));
+	}
+	
+Comparable:
+	It is a interface need to implement in the Class
+	Implement the compareTo(Object obj) method into the class.
+	Syntax: Collections.sort(List); 
 			
 Searching:
 	Most popular searching algorithm
@@ -609,3 +651,32 @@ Sorting:
 		1. Merge sort
 		2. Bubble sort
 		3. Quick sort
+		
+
+
+
+Transient Keyword:
+	It is used to avoid the entry during the serialization. IF we mentioned any of the variable as transient and if we serialize the class object it wont insert the original value instead it will use the default value for the variable.
+	
+	transient int k=30;
+	int i =20;
+	serialization process;
+	deserialization process;
+	print(i) --> 20
+	print(k) --> it will be 0 instead of 30
+	
+CustomExceptionHandling:
+	By Extends RuntimeException class we can write our logic init.
+	Exception handling is an important one while working on the enterprise applications.
+	During the production issue inorder to identify easily need to write it clear manner will help us to identify easily.
+	Written sample program in the Repo
+	
+	public class ExceptionHandlingTest extends RuntimeException {
+		private String message;
+
+		public ExceptionHandlingTest(String msg) {
+			super(msg);
+			this.message = msg;
+		}
+	}
+	
