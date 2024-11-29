@@ -2,6 +2,7 @@ package Basic;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,9 +23,13 @@ public class FindSecondMax {
 		System.out.println(secondMax);
 		
 		//Sorted Method
-		List<Integer> sortedList = list.parallelStream().sorted().collect(Collectors.toList());
+		List<Integer> sortedList = list.parallelStream().sorted().distinct().collect(Collectors.toList());
 		System.out.println(sortedList);
 		System.out.println(sortedList.get(sortedList.size()-2));
+		
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(99,10,1,2,3,4,5,8,5,6));
+		Collections.sort(list1,Collections.reverseOrder());
+		System.out.println(list1.get(3));
 	}
 	//output:10
 }
