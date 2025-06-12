@@ -23,6 +23,7 @@ JRE :
 	Java Runtime Environment --> It is allow the class file to execute on the environment. It doesn't allow to compile the code. It will contains executable libraries in it.
 	JVM is a one of the part of JRE.	
 	JVM + Libraries = JRE
+        It is used to run garbage collector
 	
 	
 JVM : 
@@ -679,7 +680,7 @@ CustomExceptionHandling:
 			this.message = msg;
 		}
 	}
-	
+
 Built in methods:
 	Arrays.sort - It will sort the array.
 		int[] a = {10,40,20,25};        
