@@ -690,3 +690,64 @@ Built in methods:
         }
 	List.sort(null); --> List<> list = [1,3,2] --> list.sort(null) then output : [1,2,3]
 	Collections.sort(a,Collections.reverseOrder()); where a --> list. Collections is from util package
+	
+	Integer.valueOf(10) --> Convert int to Integer
+	
+	
+Arrays:
+	Initialize and declare methods:
+		int[] i = {1,2,3,4,5};
+		int[] i = new int[5]; --> i[1] =1; ...
+		
+	Searching:
+		Traditional:
+			Iterate one by one
+		Built-in:
+			For linear search we need to follow the traditional method, there is no built in method.
+			For Binary search we have Arrays.binarySearch(array,findNumber)
+		Java8 Feature:
+			How to convert Arrays into stream , 2 ways
+				Arrays.stream(array)
+				Stream.of(array)
+			
+	Sorting:
+		Traditional:
+			selection sort
+		Built-in:
+			Arrays.sort(arr);
+		Java8 Feature:
+			Arrays.sort(arr, Comparator.naturalOrder());
+			Arrays.sort(arr, Comparator.reverseOrder());
+			Arrays.stream(arr).sorted().toArray(String[] :: new);
+			
+Collections:
+	List:
+	Types:
+		ArrayList
+		LinkedList
+		Searching:
+			Traditional:
+			Built-in:
+			Java8 Feature:
+		Sorting:
+			Traditional:
+			Built-in:
+			Java8 Feature:
+	Set:
+		Searching:
+			Traditional:
+			Built-in:
+			Java8 Feature:
+		Sorting:
+			Traditional:
+			Built-in:
+			Java8 Feature:
+	Map:
+		Searching:
+			Traditional:
+			Built-in:
+			Java8 Feature:
+		Sorting:
+			Traditional:
+			Built-in:
+			Java8 Feature:
