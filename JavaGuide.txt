@@ -23,7 +23,7 @@ JRE :
 	Java Runtime Environment --> It is allow the class file to execute on the environment. It doesn't allow to compile the code. It will contains executable libraries in it.
 	JVM is a one of the part of JRE.	
 	JVM + Libraries = JRE
-        It is used to run garbage collector
+    It is used to run garbage collector	
 	
 	
 JVM : 
@@ -680,7 +680,7 @@ CustomExceptionHandling:
 			this.message = msg;
 		}
 	}
-
+	
 Built in methods:
 	Arrays.sort - It will sort the array.
 		int[] a = {10,40,20,25};        
@@ -725,25 +725,62 @@ Collections:
 	List:
 	Types:
 		ArrayList
-		LinkedList
+			It is easy to access by using index
+			This space is less compare to Linked list
+			Easy to insert data in ending
+			Complex to add the data in front and middle.
+		LinkedList:
+			It is easy to insert at any place
+			Retriving data will take more time than ArrayList
+			Space is high because it should contains both references, because it is doubly linked list.
 		Searching:
 			Traditional:
+				for(Integer i:list){
+					if(i.equals(givenNumber){
+					}
+				}
 			Built-in:
+				contains 
+				Which is only applicable for equals not for equalsIgnoreCase
+				
 			Java8 Feature:
+				list.stream().filter(a -> givenNumber).map(further).collect(Collectors.toList());
+				list.stream.anyMatch(a -> a.equalsIgnoreCase(find)); --> Which will return true/false
 		Sorting:
 			Traditional:
+				SelectionSort
 			Built-in:
+				Collections.sort(list);
+				list.sort(null);
 			Java8 Feature:
+				list.stream().sorted().collect(Collectors.toList());
 	Set:
+		HashSet --> unordered set
+		LinkedHashSet --> It will be kept as inserted.
+		TreeSet --> It will sort the data
 		Searching:
 			Traditional:
+				for(Integer i:list){
+					if(i.equals(givenNumber){
+					}
+				}
 			Built-in:
+				Contains
+				
 			Java8 Feature:
+				set.stream().filter(a -> givenNumber).map(further).collect(Collectors.toSet());
+				set.stream.anyMatch(a -> a.equalsIgnoreCase(find)); --> Which will return true/false
 		Sorting:
 			Traditional:
+				Convert set to List and sort
 			Built-in:
+				Convert Hashset to TreeSet then it will sorted
 			Java8 Feature:
+				Convert Hashset to TreeSet then it will sorted
 	Map:
+		HashMap
+		TreeMap
+		LinkedHashMap
 		Searching:
 			Traditional:
 			Built-in:
