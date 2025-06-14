@@ -80,6 +80,9 @@ String:
 			StringBuffer obj = new StringBuffer();
 			It is thread-safe and contains reverse() in built keyword to reverse the string.
 			It is mutable like stringbuilder.
+			
+	How to use string in stream api:
+		s.char().mapToObj(c -> (char) c)
 ----
 
 OOPS:
