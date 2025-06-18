@@ -80,6 +80,9 @@ String:
 			StringBuffer obj = new StringBuffer();
 			It is thread-safe and contains reverse() in built keyword to reverse the string.
 			It is mutable like stringbuilder.
+			
+	How to use string in stream api:
+		s.char().mapToObj(c -> (char) c)
 ----
 
 OOPS:
@@ -779,7 +782,8 @@ Collections:
 				Convert Hashset to TreeSet then it will sorted
 	Map:
 		HashMap
-		TreeMap
+		TreeMap:
+			It wont allow null key
 		LinkedHashMap
 		Searching:
 			Traditional:
