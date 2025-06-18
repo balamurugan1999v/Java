@@ -782,7 +782,8 @@ Collections:
 				Convert Hashset to TreeSet then it will sorted
 	Map:
 		HashMap
-		TreeMap
+		TreeMap:
+			It wont allow null key
 		LinkedHashMap
 		Searching:
 			Traditional:
