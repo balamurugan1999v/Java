@@ -29,6 +29,7 @@ public class GroupingAndCounting {
         	}
         }
         System.out.println(count);
+        sc.close();
 	}
 
 }
