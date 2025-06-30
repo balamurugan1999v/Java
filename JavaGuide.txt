@@ -781,13 +781,16 @@ Collections:
 			Java8 Feature:
 				Convert Hashset to TreeSet then it will sorted
 	Map:
-		HashMap
+		HashMap:
+			It will allow null key once.
 		TreeMap:
 			It wont allow null key
-		LinkedHashMap
+		LinkedHashMap:
+			It will keep the order of the key
 		Searching:
 			Traditional:
 			Built-in:
+				contains
 			Java8 Feature:
 		Sorting:
 			Traditional:
