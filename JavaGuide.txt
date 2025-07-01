@@ -699,6 +699,9 @@ Built in methods:
 	
 	
 Arrays:
+	From String to array we can use split
+	Syntax:
+		str.split(",");
 	Initialize and declare methods:
 		int[] i = {1,2,3,4,5};
 		int[] i = new int[5]; --> i[1] =1; ...
