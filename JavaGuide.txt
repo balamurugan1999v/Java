@@ -696,7 +696,8 @@ Built in methods:
 	Collections.sort(a,Collections.reverseOrder()); where a --> list. Collections is from util package
 	
 	Integer.valueOf(10) --> Convert int to Integer
-	
+Reflection:
+	Reflection means, we have one class and a method, in somewhere without calling directly, dynamically we call the class and methods
 	
 Arrays:
 	From String to array we can use split
