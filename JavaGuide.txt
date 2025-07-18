@@ -93,7 +93,20 @@ String:
 		s.char().mapToObj(c -> (char) c)
 		
 	if we want iterate based on the index we can follow this as well!.
-		s.IntStream(0,str.length()).mapToObj( i -> str.charAt(i)).map(s -> s.valueOf()).collect(Collectors.joining());
+		s=IntStream.range(0,str.length()).mapToObj( i -> str.charAt(i)).map(s -> s.valueOf()).collect(Collectors.joining());
+		
+----
+Memory:
+	Static memory:
+		Variables, methods
+	Heap memory:
+		Data assined to variables during the run time( new)
+		Stringpool
+	
+----
+Exceptions:
+	Checked Exceptions
+	Unchecked Exceptions
 ----
 
 OOPS:
@@ -550,6 +563,16 @@ CompareTo():
 	Example:
 		"bmg".compareTo("Bmg"); --> return negative
 		"bmg".compareToEqualsIgnoreCase("Bmg"); --> Zero
+		
+	List<Student1> stu = new ArrayList<Student1>();
+	stu.add(new Student1(1,"Bmg"));
+	stu.add(new Student1(2,"Bala"));
+	stu.add(new Student1(3,"Kala"));
+	stu.add(new Student1(4,"Abi"));
+	stu.add(new Student1(5,"kala"));
+	stu.add(new Student1(6,"abi"));
+	
+	Collections.sort(stu, (s1,s2) -> s1.getName().compareTo(s2.getName()));
 
 Serializable : 
 	It is converting the object into series of bits, to write into file/network.
