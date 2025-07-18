@@ -23,7 +23,6 @@ JRE :
 	Java Runtime Environment --> It is allow the class file to execute on the environment. It doesn't allow to compile the code. It will contains executable libraries in it.
 	JVM is a one of the part of JRE.	
 	JVM + Libraries = JRE
-    It is used to run garbage collector	
 	
 	
 JVM : 
@@ -31,8 +30,17 @@ JVM :
 		Here only the executed class file will run.
 		It is executing the program line by line.
 		It is the key part for both JVM and JDK.
+		
+		It manages memory, handle threads and core services.
+		Garbage collection will taken care by JVM
+		While clicking run of the Java application, ClassLoader will dynamically load the class and create a JVM Instance, which will read the .class file and execute line by line.
 			
 
+In Summary:
+	If you just want to run a Java program, you need JRE.
+	If you want to write and compile Java programs, you need JDK.
+	The JVM is the invisible engine that makes Java programs run, regardless of whether you have the JRE or JDK installed.
+	
 ----
 
 Access Modifiers:
@@ -83,6 +91,9 @@ String:
 			
 	How to use string in stream api:
 		s.char().mapToObj(c -> (char) c)
+		
+	if we want iterate based on the index we can follow this as well!.
+		s.IntStream(0,str.length()).mapToObj( i -> str.charAt(i)).map(s -> s.valueOf()).collect(Collectors.joining());
 ----
 
 OOPS:
@@ -332,6 +343,8 @@ Stream API:
 
 Optional:
 	It is created to avoid the null pointer exception crashing the application issue.
+	Anyway it will throw NoSuchElementException instead of Nullpointer exception. But we need to understand why it advantage, during the development, we might miss to handle the null pointer exception and dont know where exactly, but if we add it in optional which will return you NoSuchElementException, Whenever we use Optional forced to use isPresent() so it will be handled, and OrElse will be used these advantage of going to Optional over other collections
+	
 	
 	Example code:
 	
