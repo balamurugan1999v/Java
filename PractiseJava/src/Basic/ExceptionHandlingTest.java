@@ -14,7 +14,7 @@ public class ExceptionHandlingTest extends RuntimeException {
 
 	public static void main(String[] args) {
 		ProcessingData obj = new ProcessingData();
-		String passingValue ="F";
+		String passingValue ="X";
 		System.out.println("passingValue "+passingValue);
 		obj.checkTheGivenStartingString(passingValue);
 		List<String> result = obj.findTheGivenStartingString(passingValue);
