@@ -32,7 +32,7 @@ public class RepeatCounts {
 			} else {
 				List<String> list = new ArrayList<String>();
 				list.add(obj.toString());
-				//System.out.println(map1.get(obj));
+				System.out.println(map1.get(obj));
 				map.put(map1.get(obj), list);
 			}
 		}
