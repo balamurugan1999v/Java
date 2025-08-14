@@ -8,7 +8,7 @@ public class FindReversePair {
 
 	public static void main(String[] args) {
 		int i=0,j=0;
-		int arr[] = {20,5,4,2,1};
+		int arr[] = {20,5,4,3,2,1};
         int n= arr.length;
         int totalCount =0;
         List<Integer> list = Arrays.stream(arr).boxed().sorted().collect(Collectors.toList());
@@ -33,8 +33,9 @@ public class FindReversePair {
                     totalCount+=1;
                     int va = arr[j];
                     System.out.println(va);
-                    if(dynamicList.contains(arr[j])){
-                        dynamicList.remove((Integer) arr[j]);
+                    if(dynamicList.indexOf(va) != -1){
+                    	int index = dynamicList.indexOf(va);
+                        dynamicList.remove(index);
                     }
                 }
                 if(dynamicList.size() == 0){
