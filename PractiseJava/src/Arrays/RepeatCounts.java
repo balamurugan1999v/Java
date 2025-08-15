@@ -14,12 +14,14 @@ public class RepeatCounts {
 	public static void main(String[] args) {
 		String arr[] = {"Turin", "Nick", "Turin", "Nick","Bmg"};
 		Map<String, Long> map1 = new HashMap<String, Long>();
-        map1 = Arrays.stream(arr).collect(Collectors.groupingBy(k -> k, Collectors.counting()));      
+        map1 = Arrays.stream(arr).collect(Collectors.groupingBy(k -> k, Collectors.counting()));
+        System.out.println(map1);
         Map<Long, List<String>> map3 = createMap3(map1);
+        System.out.println(map3);
         Optional<Long> number = map3.keySet().stream().sorted(Comparator.reverseOrder()).findFirst();
         List<String> listStri = map3.get(number.get());
         listStri.sort(null);
-        System.out.println(listStri.get(0));
+        System.out.println(listStri);
 	}
 
 	private static Map<Long, List<String>> createMap3(Map<String, Long> map1) {

@@ -21,7 +21,8 @@ public class GroupingBy {
 		Employee emp1 = new Employee("Priya", "Dev", "16");
 		Employee emp2 = new Employee("Kumar", "Verification", "24");
 		Employee emp3 = new Employee("Adam", "Dev", "14");
-		List<Employee> list = new ArrayList<>(List.of(emp1,emp2,emp3));
+		Employee emp4 = new Employee("Bmg", "Dev", "14");
+		List<Employee> list = new ArrayList<>(List.of(emp1,emp2,emp3,emp4));
 		
 		Map<String, Long> empDetails = list.stream().collect(Collectors.groupingBy( Employee::getRole,Collectors.counting()));
 		
