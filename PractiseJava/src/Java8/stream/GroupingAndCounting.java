@@ -23,6 +23,7 @@ public class GroupingAndCounting {
                 maximum = l;
             }
         }
+        System.out.println(map);
         for(Entry<Long, Long> m : map.entrySet()) {
         	if(maximum == m.getValue()) {
         		count++;

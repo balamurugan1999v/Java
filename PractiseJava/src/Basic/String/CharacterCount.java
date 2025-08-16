@@ -9,7 +9,7 @@ public class CharacterCount {
 		char find = ' ';
 		int
 		count = (int) s.chars()
-				.filter( i -> i==find).count();
+				.filter( i -> i!=find).count();
 		System.out.println(count);
 
 	}
